@@ -1,13 +1,15 @@
 import Link from 'next/link'
+import { useRouter } from 'next/router'
 import { useState, useEffect } from 'react'
 
 function Navbar() {
     const [showSidebar, setShowSidebar] = useState(false)
     const [title, setTitle] = useState("")
+    const router = useRouter()
 
     useEffect(() => {
         setTitle(document.title)
-    }, [setTitle])
+    }, [setTitle, router])
 
     return (
         <nav className="w-screen flex justify-between px-4 py-8 mx-auto bg-slate-500">
